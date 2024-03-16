@@ -9,12 +9,12 @@ const data = [
     Profit: 2400
   },
   {
-    Month: 'Feb 21',
+    Month: 'Jan 22',
     Sales: 1890,
     Profit: 1398
   },
   {
-    Month: 'Jan 22',
+    Month: 'Jan 23',
     Sales: 3890,
     Profit: 2980
   }
