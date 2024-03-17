@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import Nav from './nav';
 import { Suspense } from 'react';
 import { ThemeProvider } from './components/themeProvider';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Pricelytics - AI-Based Pricing for E-Commerce',
@@ -59,17 +60,15 @@ export default async function RootLayout({
   return (
     <html lang="en" className="h-full bg-gray-50">
       <body className="h-full">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Suspense>
-            <Nav />
-          </Suspense>
-          {children}
-        </ThemeProvider>
+        <Suspense>
+          <Nav />
+        </Suspense>
+        {children}
+        <div id="blustai-chat" />
+        <Script
+          src="https://cdn.blust.ai/blustai-chat.js"
+          data-tool="65f6abd3ce50da60a15c8f6b"
+        />
         <Analytics />
       </body>
     </html>
