@@ -1,8 +1,8 @@
 import { sql } from '@vercel/postgres';
-import { Card, Title, Text } from '@tremor/react';
-import Search from './search';
-import UsersTable from './table';
+import { Title, Text } from '@tremor/react';
+import Search from './components/search';
 import { Products } from './types/products';
+import ProductCard from './components/productCard';
 
 interface User {
   id: number;
@@ -11,7 +11,7 @@ interface User {
   email: string;
 }
 
-export default async function IndexPage({
+export default async function DashboardPage({
   searchParams
 }: {
   searchParams: { q: string };
@@ -20,7 +20,8 @@ export default async function IndexPage({
   const result = await sql`
     SELECT id, name, username, email 
     FROM users 
-    WHERE name ILIKE ${'%' + search + '%'};
+    WHERE name ILIKE ${'%' + search + '%'}
+    LIMIT 10;
   `;
   const users = result.rows as User[];
 
@@ -29,9 +30,9 @@ export default async function IndexPage({
       <Title>Products</Title>
       <Text>A list of products retrieved from a Postgres database.</Text>
       <Search />
-      <Card className="mt-6">
-        <UsersTable users={users} />
-      </Card>
+      <div className="flex mt-6">
+        <ProductCard />
+      </div>
     </main>
   );
 }

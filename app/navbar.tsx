@@ -6,6 +6,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const navigation = [
   { name: 'Dashboard', href: '/' },
@@ -27,13 +28,15 @@ export default function Navbar({ user }: { user: any }) {
             <div className="flex h-16 justify-between">
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center">
-                  <Image
-                    className="h-8 w-auto rounded-full"
-                    src="/logo.webp"
-                    alt="Workflow"
-                    height={32}
-                    width={32}
-                  />
+                  <Link href="/">
+                    <Image
+                      className="h-8 w-auto rounded-full"
+                      src="/logo.webp"
+                      alt="Workflow"
+                      height={32}
+                      width={32}
+                    />
+                  </Link>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (
