@@ -7,7 +7,7 @@ import { Products } from '../types/products';
 export default function ProductCard(products: Products) {
   return (
     <div>
-      <Link href="/product/1">
+      <Link href={`/product/${products.id}`}>
         <Card className="hover:bg-slate-200">
           <CardHeader>
             {/* Apply flexbox styles to center the image */}
