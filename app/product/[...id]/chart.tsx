@@ -13,7 +13,6 @@ export default function Chart({
   data: any;
   className: string;
 }) {
-  console.log(data);
   return (
     <Card className={className}>
       <Title>{title}</Title>

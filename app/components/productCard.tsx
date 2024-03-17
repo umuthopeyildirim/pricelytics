@@ -3,8 +3,7 @@ import { Title, Text } from '@tremor/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ProductCard(products) {
-  console.info(products);
+export default function ProductCard(products: any) {
   return (
     <div>
       <Link href="/product/1">
