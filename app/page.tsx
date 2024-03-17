@@ -21,7 +21,7 @@ export default async function DashboardPage({
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
       <Title>Products</Title>
-      <Text>A list of products retrieved from a Postgres database.</Text>
+      <Text>Your online products.</Text>
       <Search />
       <div className="grid grid-cols-4 mt-6 gap-4 ">
         {products.length === 0 ? (
