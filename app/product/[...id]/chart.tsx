@@ -2,36 +2,29 @@
 
 import { Card, AreaChart, Title, Text } from '@tremor/react';
 
-const data = [
-  {
-    Month: 'Jan 21',
-    Sales: 2890,
-    Profit: 2400
-  },
-  {
-    Month: 'Jan 22',
-    Sales: 1890,
-    Profit: 1398
-  },
-  {
-    Month: 'Jan 23',
-    Sales: 3890,
-    Profit: 2980
-  }
-];
-
-export default function Example() {
+export default function Chart({
+  title,
+  description,
+  data,
+  className
+}: {
+  title: string;
+  description: string;
+  data: any;
+  className: string;
+}) {
+  console.log(data);
   return (
-    <Card className="mt-8">
-      <Title>Performance</Title>
-      <Text>Comparison between Sales and Profit</Text>
+    <Card className={className}>
+      <Title>{title}</Title>
+      <Text>{description}</Text>
       <AreaChart
         className="mt-4 h-80"
         data={data}
-        categories={['Sales', 'Profit']}
+        categories={['Retail', 'Production']}
         index="Month"
         colors={['indigo', 'fuchsia']}
-        valueFormatter={(number: number) =>
+        valueFormatter={(number) =>
           `$ ${Intl.NumberFormat('us').format(number).toString()}`
         }
         yAxisWidth={60}

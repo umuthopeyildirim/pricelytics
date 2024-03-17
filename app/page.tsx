@@ -31,7 +31,7 @@ export default async function DashboardPage({
       <Text>A list of products retrieved from a Postgres database.</Text>
       <Search />
       <div className="flex mt-6">
-        <ProductCard />
+        <ProductCard products={users} />
       </div>
     </main>
   );

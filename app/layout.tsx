@@ -3,6 +3,7 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import Nav from './nav';
 import { Suspense } from 'react';
+import { ThemeProvider } from './components/themeProvider';
 
 export const metadata = {
   title: 'Pricelytics - AI-Based Pricing for E-Commerce',
@@ -58,10 +59,17 @@ export default async function RootLayout({
   return (
     <html lang="en" className="h-full bg-gray-50">
       <body className="h-full">
-        <Suspense>
-          <Nav />
-        </Suspense>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Suspense>
+            <Nav />
+          </Suspense>
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

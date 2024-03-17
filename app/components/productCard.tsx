@@ -1,16 +1,10 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from '../components/ui/card';
+import { Card, CardContent, CardHeader } from '../components/ui/card';
 import { Title, Text } from '@tremor/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ProductCard() {
+export default function ProductCard(products) {
+  console.info(products);
   return (
     <div>
       <Link href="/product/1">
@@ -21,11 +15,13 @@ export default function ProductCard() {
               alt="Product"
               width={200}
               height={200}
+              className="rounded"
             />
           </CardHeader>
           <CardContent>
             <Title>Product Name</Title>
             <Text>Product description</Text>
+            <Text className="text-xs">Price: $100</Text>
           </CardContent>
         </Card>
       </Link>

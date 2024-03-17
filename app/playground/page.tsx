@@ -1,7 +1,10 @@
+import { Text, Title } from '@tremor/react';
+
 export default function Playground() {
   return (
-    <div>
-      <h1>Playground</h1>
-    </div>
+    <main className="p-4 md:p-10 mx-auto max-w-7xl">
+      <Title>Playground</Title>
+      <Text>You can chat with your AI.</Text>
+    </main>
   );
 }

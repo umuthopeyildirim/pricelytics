@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const tremor = {
+  darkMode: 'class',
   content: [
     './node_modules/@tremor/**/*.{js,ts,jsx,tsx}' // Tremor module
   ],
