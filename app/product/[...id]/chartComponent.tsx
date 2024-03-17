@@ -59,7 +59,6 @@ export default function ChartComponent({
         data={chartData}
         categories={categories} // This will now be set dynamically
         index="Month"
-        colors={['indigo', 'fuchsia', 'green']} // Make sure to have enough colors for all categories
         valueFormatter={(number) =>
           `$${Intl.NumberFormat('us').format(number)}`
         }
