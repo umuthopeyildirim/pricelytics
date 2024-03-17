@@ -69,7 +69,6 @@ export default async function RootLayout({
           src="https://cdn.blust.ai/blustai-chat.js"
           data-tool={process.env.NEXT_PUBLIC_BLUSTAI_CHAT}
         />
-        <Analytics />
       </body>
     </html>
   );
