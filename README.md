@@ -1,20 +1,24 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/9113740/201498864-2a900c64-d88f-4ed4-b5cf-770bcb57e1f5.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/9113740/201498152-b171abb8-9225-487a-821c-6ff49ee48579.png">
-  <img alt="Shows all of the tools in the stack for this template, also listed in the README file." src="https://user-images.githubusercontent.com/9113740/201498152-b171abb8-9225-487a-821c-6ff49ee48579.png">
+  <img alt="Pricelytics" src="https://pricelytics.umutyildirim.com/og-image.png">
 </picture>
 
-<div align="center"><strong>Next.js 14 Admin Dashboard Template</strong></div>
-<div align="center">Built with the Next.js App Router</div>
+<div align="center"><strong>Pricelytics</strong></div>
+<div align="center">Leverage AI to dynamically price your e-commerce products with Pricelytics, optimizing for market trends and maximizing profits.</div>
 <br />
 <div align="center">
-<a href="http://admin-dash-template.vercel.sh/">Demo</a>
-<span> · </span>
-<a href="https://vercel.com/templates/next.js/admin-dashboard-tailwind-planetscale-react-nextjs">Clone & Deploy</a>
-<span>
+<a href="https://pricelytics.umutyildirim.com/">Demo</a>
 </div>
 
 ## Overview
+
+Automate your e-commerce product pricing with our AI-driven solution, Pricelytics. Optimize prices for maximum profit and competitiveness. Pricelytics uses advanced machine learning techniques to analyze market trends and adjust your product prices in real-time, ensuring that you stay competitive while maximizing your profitability.
+
+## Features
+
+AI-Driven Pricing: Utilize cutting-edge artificial intelligence to optimize your e-commerce pricing strategies.
+Market Analysis: Automatically analyze market trends and adjust prices to stay competitive.
+Real-Time Updates: Get real-time pricing updates to respond quickly to market changes.
+Maximize Profitability: Ensure your pricing strategies are optimized for the highest possible profits.
 
 This is a starter template using the following stack:
 
@@ -24,38 +28,30 @@ This is a starter template using the following stack:
 - Database - [Vercel Postgres](https://vercel.com/postgres)
 - Deployment - [Vercel](https://vercel.com/docs/concepts/next.js/overview)
 - Styling - [Tailwind CSS](https://tailwindcss.com)
-- Components - [Tremor](https://www.tremor.so)
+- Components - [Tremor](https://www.tremor.so) / [shadcn](https://ui.shadcn.com/)
 - Analytics - [Vercel Analytics](https://vercel.com/analytics)
 - Linting - [ESLint](https://eslint.org)
 - Formatting - [Prettier](https://prettier.io)
 
-This template uses the new Next.js App Router. This includes support for enhanced layouts, colocation of components, tests, and styles, component-level data fetching, and more.
-
 ## Getting Started
 
-During the deployment, Vercel will prompt you to create a new Postgres database. This will add the necessary environment variables to your project.
-
-Inside the Vercel Postgres dashboard, create a table based on the schema defined in this repository.
+First, clone the repository and install the dependencies using the following commands:
 
 ```
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  email VARCHAR(255) NOT NULL,
-  name VARCHAR(255),
-  username VARCHAR(255)
-);
+git clone https://github.com/umuthopeyildirim/pricelytics.git \
+  &&
+cd pricelytics \
+  &&
+pnpm install
 ```
 
-Insert a row for testing:
+For quickstart we recommend Vercel Postgres, copy the SQL scripts from `pricelytics.sql` and run them in the SQL editor to create the necessary tables.
 
-```
-INSERT INTO users (id, email, name, username) VALUES (1, 'me@site.com', 'Me', 'username');
-```
+Next, create a copy of `.env.local.example` file in the root of the project and remame it to `.env.local`. Fill in the necessary environment variables found in the example file.
 
 Finally, run the following commands to start the development server:
 
 ```
-pnpm install
 pnpm dev
 ```
 
