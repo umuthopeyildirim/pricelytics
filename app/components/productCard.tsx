@@ -2,25 +2,29 @@ import { Card, CardContent, CardHeader } from '../components/ui/card';
 import { Title, Text } from '@tremor/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Products } from '../types/products';
 
-export default function ProductCard(products: any) {
+export default function ProductCard(products: Products) {
   return (
     <div>
       <Link href="/product/1">
         <Card className="hover:bg-slate-200">
           <CardHeader>
-            <Image
-              src="https://media.wired.com/photos/652db3f0b44e9598aea19183/master/pass/Best-Pixel-Phones-Gear.jpg"
-              alt="Product"
-              width={200}
-              height={200}
-              className="rounded"
-            />
+            {/* Apply flexbox styles to center the image */}
+            <div className="flex items-center justify-center max-h-40 overflow-hidden">
+              <Image
+                src={products.product_image}
+                alt={products.product_name}
+                width={160}
+                height={160}
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           </CardHeader>
           <CardContent>
-            <Title>Product Name</Title>
-            <Text>Product description</Text>
-            <Text className="text-xs">Price: $100</Text>
+            <Title>{products.product_name}</Title>
+            <Text>{products.description}</Text>
+            <Text className="text-xs">Price: ${products.retail_cost}</Text>
           </CardContent>
         </Card>
       </Link>
