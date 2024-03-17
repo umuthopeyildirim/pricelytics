@@ -65,9 +65,10 @@ export default async function RootLayout({
         </Suspense>
         {children}
         <div id="blustai-chat" />
-        <Script
+        <script
           src="https://cdn.blust.ai/blustai-chat.js"
           data-tool={process.env.NEXT_PUBLIC_BLUSTAI_CHAT}
+          async
         />
       </body>
     </html>
