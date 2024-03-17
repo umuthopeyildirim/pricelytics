@@ -55,9 +55,19 @@ export default function ProductPage() {
               alignItems="baseline"
               className="space-x-2"
             >
-              <div className="flex space-x-1">
-                <Text>Description:</Text>
-                <p className="text-sm text-slate-500">{product.description}</p>
+              <div className="flex flex-col">
+                <div className="flex space-x-1">
+                  <Text>Description:</Text>
+                  <p className="text-sm text-slate-500">
+                    {product.description}
+                  </p>
+                </div>
+                <div className="flex space-x-1">
+                  <Text>Category:</Text>
+                  <p className="text-sm text-slate-500">
+                    ${product.retail_cost}
+                  </p>
+                </div>
               </div>
             </Flex>
             <Button>
